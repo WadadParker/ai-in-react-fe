@@ -1,9 +1,11 @@
+import ChatBox from "./components/ChatBox"
 
 function App() {
 
   return (
-    <div>
-      <h1 className=" text-red-500 text-9xl text-center">Hello Za Worldo</h1>
+    <div className="flex flex-col justify-start items-center gap-y-10 h-screen">
+      <h1 className=" text-9xl text-center">CatChat</h1>
+      <ChatBox />
     </div>
   )
 }
