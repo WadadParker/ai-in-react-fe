@@ -29,10 +29,10 @@ const ChatBox = ({setChatResponse}) => {
   return (
     <>
     <section className="relative w-screen justify-start items-center flex flex-col h-fit ">
-        <textarea disabled={isLoading} value={input} onChange={(e)=>setInput(e.target.value)} placeholder="Ask anything to our Cat Expert!" className="text-lg border w-1/2 h-60 rounded-xl p-4 resize-none" />
-        <button disabled={isLoading} onClick={callChatService} className="absolute bottom-2 right-1/4 mr-3 z-30 text-xs border rounded-md px-2 hover:cursor-pointer disabled:opacity-50">Generate!</button>
+        <textarea disabled={isLoading} value={input} onChange={(e)=>setInput(e.target.value)} placeholder="Ask anything to our Cat Expert!" className="text-lg border w-1/2 h-40 rounded-xl p-4 resize-none" />
+        <button disabled={isLoading} onClick={callChatService} className="absolute bottom-2 right-1/4 mr-3 z-30 text-xs border rounded-md px-2 hover:cursor-pointer disabled:opacity-50 disabled:hover:cursor-default">Generate!</button>
     </section>    
-    {isLoading && <div className="border-2  border-r-transparent border-black size-5 rounded-full animate-spin"></div>}
+    {isLoading && <div className="border-2  border-r-transparent border-black size-5 rounded-full animate-spin mb-20"></div>}
     </>
   )
 }
