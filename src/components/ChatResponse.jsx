@@ -8,7 +8,7 @@ const ChatResponse = ({chat}) => {
 
   const html = markdownToHtml(chatWithoutThink);
   return (
-    <section className="flex flex-col grow w-screen justify-between items-center">
+    <section className="flex flex-col grow w-screen justify-between items-center overflow-y-scroll">
         <p className="w-1/2 text-xs text-gray-600">{thinkBlock}</p>
         <div className="w-1/2 text-xl grow overflow-y-scroll" dangerouslySetInnerHTML={{ __html: html }} />
     </section>
