@@ -44,8 +44,8 @@ const ChatBox = ({streamMode,setChatResponse}) => {
 
             let streamCompleted = false;
             while (!streamCompleted) {
-                const { value, streamCompleteStatus } = await reader.read();
-                streamCompleted = streamCompleteStatus;
+                const { value, done } = await reader.read();
+                streamCompleted = done;
                 if(value) {
                     const chunk = decoder.decode(value);
                     setChatResponse(prev=> prev + chunk)
@@ -67,7 +67,11 @@ const ChatBox = ({streamMode,setChatResponse}) => {
         <textarea disabled={isLoading} value={input} onChange={(e)=>setInput(e.target.value)} placeholder="Ask anything to our Cat Expert!" className="text-lg border w-1/2 h-40 rounded-xl p-4 resize-none" />
         <button disabled={isLoading} onClick={()=>streamMode?callStreamService():callChatService()} className="absolute bottom-2 right-1/4 mr-3 z-30 text-xs border rounded-md px-2 hover:cursor-pointer disabled:opacity-50 disabled:hover:cursor-default">Generate!</button>
     </section>    
-    {isLoading && <div className="border-2  border-r-transparent border-black size-5 rounded-full animate-spin mb-20"></div>}
+    {isLoading && 
+    (streamMode 
+    ?<div className="absolute bottom-48 border-2  border-r-transparent border-black size-5 rounded-full animate-spin"></div> 
+    :<div className="border-2  border-r-transparent border-black size-5 rounded-full animate-spin mb-20"></div> 
+    )}
     </>
   )
 }
