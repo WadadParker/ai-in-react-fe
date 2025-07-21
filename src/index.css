@@ -19,3 +19,12 @@
   display: none;
 }
 
+.think {
+  display: block;                    
+  padding: 1rem;                     /* inner spacing */
+  margin: 1rem 0;                    /* vertical separation */
+  border-left: 4px solid #4A5568;    /* colored stripe on the left */
+  background-color: #EDF2F7;         /* light-gray background */
+  font-style: italic;                /* italicize the “thinking” voice */
+}
+
